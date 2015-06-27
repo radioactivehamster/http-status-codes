@@ -1,7 +1,11 @@
-var fs      = require('fs');
-var gulp    = require('gulp');
-var less    = require('gulp-less');
-var stachio = require('gulp-stachio');
+'use strict';
+
+
+var browserSync = require('browser-sync').create();
+var fs          = require('fs');
+var gulp        = require('gulp');
+var less        = require('gulp-less');
+var stachio     = require('gulp-stachio');
 
 gulp.task('data', () => {
     return fs.mkdir('data', () => {
@@ -13,6 +17,12 @@ gulp.task('data', () => {
             fs.renameSync('http-status-codes.yml', 'data/http-status-codes.yml');
         } catch (_e) {}
     });
+});
+
+gulp.task('serve', ['data', 'style', 'template'], () => {
+    browserSync.init({ open: false, server: { baseDir: './' } });
+    gulp.watch('src/style/*.less', ['style']).on('change', browserSync.reload);
+    gulp.watch('src/template/*.hbs', ['template']).on('change', browserSync.reload);
 });
 
 gulp.task('style', () => {
