@@ -1,14 +1,16 @@
 {
   "name": "@radioactivehamster/http-status-codes",
   "version": "0.0.0",
-  "description": "Various data interchange formats of the various HTTP status codes as defined in RFC2616.",
-  "main": "index.js",
+  "description": "JSON & YAML representations of the HTTP status codes.",
+  "main": "http-status-codes.yml",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "HTTP",
-    "Status Codes"
+    "Status Codes",
+    "JSON",
+    "YAML"
   ],
   "author": "James Benner <james.benner@gmail.com>",
   "license": "MIT"
