@@ -11,7 +11,18 @@ header {
 }
 header h1 {
   margin: 0.5rem auto;
-  font-size: 8rem;
+  font-size: 10.5rem;
+}
+footer {
+  background-color: #111111;
+  color: #ffffff;
+  padding: 1rem;
+}
+footer a {
+  color: #ffffff;
+}
+footer a:hover {
+  color: #01ff70;
 }
 dl#status-codes {
   line-height: 6.8rem;

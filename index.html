@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Test page!!!</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>HTTP Status Codes | Radioactive Hamster</title>
+  <link rel="canonical" href="http://radioactivehamster.github.io/http-status-codes/">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
   <link rel="stylesheet" href="asset/stylesheet/main.css">
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -11,7 +14,7 @@
   <header>
     <h1>HTTP STATUS CODES</h1>
   </header>
-  <article>
+  <article id="content">
     <script>
     var radix = 10;
 
@@ -32,9 +35,13 @@
         });
 
         html.push('</dl>');
-        $('body').append(html.join('\n'));
+        $('#content').append(html.join('\n'));
     });
 </script>
   </article>
+  <footer vocab="http://schema.org/" typeof="WebPage">
+      <iframe src="https://ghbtns.com/github-btn.html?user=radioactivehamster&repo=http-status-codes&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+      <div class="h-event"><span class="p-name">Copyright</span> &copy; <time class="dt-start">2015</time> <a class="h-card" rel="me" href="jamesbenner.com">James Benner</a></div>
+  </footer>
 </body>
 </html>
