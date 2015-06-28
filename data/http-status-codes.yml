@@ -643,7 +643,7 @@
            Note: Note to implementors: some deployed proxies are known to
            return 400 or 500 when DNS lookups time out.
     505:
-      reason-phrase: HTTP Version not supported
+      reason-phrase: HTTP Version Not Supported
       description: >
         The server does not support, or refuses to support, the HTTP protocol
         version that was used in the request message. The server is
