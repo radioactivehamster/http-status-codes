@@ -3,8 +3,53 @@
 @import (reference) '@{node-modules}/colors.css/less/colors';
 
 body {
+    background-color: @lime;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: @lime;
 }
 
+header {
+    background-color: @black;
+    color: @white;
+    padding: 1rem;
+
+    h1 {
+        @margin-vertical: .5rem;
+
+        margin: @margin-vertical auto;
+        font-size: 8rem;
+    }
+}
+
+dl#status-codes {
+    @font-size-definition: 6.8rem;
+
+    line-height: @font-size-definition;
+    padding: 1.5rem;
+
+    dt {
+        color: @black;
+        font-size: 11rem;
+        font-weight: 800;
+
+        a {
+            color: @black;
+            text-decoration: none;
+
+            &:hover {
+                &:before {
+                    color: @green;
+                    content: '#';
+                }
+            }
+        }
+    }
+
+    dd {
+        color: @white;
+        font-size: @font-size-definition;
+        font-weight: 600;
+        margin-bottom: 2.5rem;
+    }
+}

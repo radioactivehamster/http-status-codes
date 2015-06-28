@@ -3,23 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <title>Test page!!!</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,800">
   <link rel="stylesheet" href="asset/stylesheet/main.css">
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
-  <main>
-    <h1>YOLO!!!!</h1>
-<script>
+  <header>
+    <h1>HTTP STATUS CODES</h1>
+  </header>
+  <article>
+    <script>
+    var radix = 10;
+
     $.getJSON('data/http-status-codes.json', function (data) {
-        Object.keys(data).forEach(function (element, index) {
-            if (index > 0) {
-                $('body').append('<hr>');
-            }
-            $('body').append('<h2>' + element + '</h2>');
-            $('body').append('<pre>' + JSON.stringify(data[element], null, 4) + '</pre>');
+        var html = ['<dl class="profile" id="status-codes">'];
+
+        $.each(data, function (key, val) {
+            var category  = val;
+            category.code = parseInt(key, radix);
+
+            $.each(category['status-codes'], function (key, val) {
+                var status  = val;
+                status.code = parseInt(key, radix);
+
+                html.push('<dt id="' + status.code + '"><a href="#' + status.code + '">' + status.code + '</a></dt>');
+                html.push('<dd class="reason-phrase">' + status['reason-phrase'] + '</dd>');
+            });
         });
+
+        html.push('</dl>');
+        $('body').append(html.join('\n'));
     });
 </script>
-  </main>
+  </article>
 </body>
 </html>
