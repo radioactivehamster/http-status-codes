@@ -1,6 +1,8 @@
 @node-modules: '../../node_modules';
 
 @import (reference) '@{node-modules}/colors.css/less/colors';
+@import '_header';
+@import '_footer';
 
 body {
     background-color: @lime;
@@ -19,20 +21,6 @@ header {
 
         margin: @margin-vertical auto;
         font-size: 10.5rem;
-    }
-}
-
-footer {
-    background-color: @black;
-    color: @white;
-    padding: 1rem;
-
-    a {
-        color: @white;
-
-        &:hover {
-            color: @lime;
-        }
     }
 }
 

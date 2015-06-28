@@ -1,3 +1,20 @@
+header h1 {
+  text-transform: uppercase;
+}
+footer {
+  background-color: #111111;
+  color: #dddddd;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 1.5rem;
+}
+footer a:hover {
+  color: #01ff70;
+}
+footer a:link,
+footer a:visited {
+  color: #dddddd;
+}
 body {
   background-color: #01ff70;
   font-family: 'Open Sans', sans-serif;
@@ -12,17 +29,6 @@ header {
 header h1 {
   margin: 0.5rem auto;
   font-size: 10.5rem;
-}
-footer {
-  background-color: #111111;
-  color: #ffffff;
-  padding: 1rem;
-}
-footer a {
-  color: #ffffff;
-}
-footer a:hover {
-  color: #01ff70;
 }
 dl#status-codes {
   line-height: 6.8rem;

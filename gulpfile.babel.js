@@ -26,7 +26,7 @@ gulp.task('serve', ['data', 'style', 'template'], () => {
 });
 
 gulp.task('style', () => {
-    return gulp.src('src/style/*.less')
+    return gulp.src('src/style/main.less')
       .pipe(less())
       .pipe(gulp.dest('asset/stylesheet'));
 });
