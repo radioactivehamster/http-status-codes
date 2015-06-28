@@ -2,6 +2,7 @@
 
 var browserSync = require('browser-sync').create();
 var csscomb     = require('gulp-csscomb');
+var dateTime    = require('@radioactivehamster/date-time');
 var fs          = require('fs');
 var gulp        = require('gulp');
 var htmltidy    = require('gulp-htmltidy');
@@ -39,7 +40,7 @@ gulp.task('template', () => {
     let htmltidyrc = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
 
     return gulp.src('src/template/*.hbs')
-        .pipe(stachio({ cname: cname }))
+        .pipe(stachio({ cname: cname, timestamp: dateTime() }))
         .pipe(htmltidy(htmltidyrc))
         .pipe(gulp.dest('./'));
 });
