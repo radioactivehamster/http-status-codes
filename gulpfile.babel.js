@@ -1,11 +1,13 @@
 'use strict';
 
-
 var browserSync = require('browser-sync').create();
+var csscomb     = require('gulp-csscomb');
 var fs          = require('fs');
 var gulp        = require('gulp');
+var htmltidy    = require('gulp-htmltidy');
 var less        = require('gulp-less');
 var stachio     = require('gulp-stachio');
+var yaml        = require('js-yaml');
 
 gulp.task('data', () => {
     return fs.mkdir('data', () => {
@@ -27,14 +29,19 @@ gulp.task('serve', ['data', 'style', 'template'], () => {
 
 gulp.task('style', () => {
     return gulp.src('src/style/main.less')
-      .pipe(less())
-      .pipe(gulp.dest('asset/stylesheet'));
+        .pipe(less())
+        .pipe(csscomb())
+        .pipe(gulp.dest('asset/stylesheet'));
 });
 
 gulp.task('template', () => {
+    let cname      = 'www.radioactivehamster.com';
+    let htmltidyrc = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
+
     return gulp.src('src/template/*.hbs')
-      .pipe(stachio())
-      .pipe(gulp.dest('./'));
+        .pipe(stachio({ cname: cname }))
+        .pipe(htmltidy(htmltidyrc))
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('default', ['data', 'style', 'template']);

@@ -1,55 +1,77 @@
-header h1 {
-  text-transform: uppercase;
+header
+{
+    padding: 1rem;
+
+    color: #fff;
+    background-color: #111;
 }
-footer {
-  background-color: #111111;
-  color: #dddddd;
-  font-size: 0.8rem;
-  line-height: 1.5;
-  padding: 1.5rem;
+header h1
+{
+    font-size: 10.5rem;
+
+    margin: .5rem auto;
+
+    text-transform: uppercase;
 }
-footer a:hover {
-  color: #01ff70;
+footer
+{
+    font-size: .8rem;
+    line-height: 1.5;
+
+    padding: 1.5rem;
+
+    color: #ddd;
+    background-color: #111;
+}
+footer a:hover
+{
+    color: #01ff70;
 }
 footer a:link,
-footer a:visited {
-  color: #dddddd;
+footer a:visited
+{
+    color: #ddd;
 }
-body {
-  background-color: #01ff70;
-  font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
+body
+{
+    font-family: 'Open Sans', sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    background-color: #01ff70;
 }
-header {
-  background-color: #111111;
-  color: #ffffff;
-  padding: 1rem;
+dl#status-codes
+{
+    line-height: 6.8rem;
+
+    padding: 1.5rem;
 }
-header h1 {
-  margin: 0.5rem auto;
-  font-size: 10.5rem;
+dl#status-codes dt
+{
+    font-size: 11rem;
+    font-weight: 800;
+
+    color: #111;
 }
-dl#status-codes {
-  line-height: 6.8rem;
-  padding: 1.5rem;
+dl#status-codes dt a
+{
+    text-decoration: none;
+
+    color: #111;
 }
-dl#status-codes dt {
-  color: #111111;
-  font-size: 11rem;
-  font-weight: 800;
+dl#status-codes dt a:hover:before
+{
+    content: '#';
+
+    color: #2ecc40;
 }
-dl#status-codes dt a {
-  color: #111111;
-  text-decoration: none;
-}
-dl#status-codes dt a:hover:before {
-  color: #2ecc40;
-  content: '#';
-}
-dl#status-codes dd {
-  color: #ffffff;
-  font-size: 6.8rem;
-  font-weight: 600;
-  margin-bottom: 2.5rem;
+dl#status-codes dd
+{
+    font-size: 6.8rem;
+    font-weight: 600;
+
+    margin-bottom: 2.5rem;
+
+    color: #fff;
 }
