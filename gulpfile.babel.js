@@ -5,8 +5,10 @@ var csscomb     = require('gulp-csscomb');
 var dateTime    = require('@radioactivehamster/date-time');
 var fs          = require('fs');
 var gulp        = require('gulp');
+var handlebars  = require('handlebars');
 var htmltidy    = require('gulp-htmltidy');
 var less        = require('gulp-less');
+var pkg         = require('./package.json');
 var stachio     = require('gulp-stachio');
 var yaml        = require('js-yaml');
 
@@ -36,11 +38,20 @@ gulp.task('style', () => {
 });
 
 gulp.task('template', () => {
+    /**
+     * Remove angle bracket enclosed email addresses.
+     * @todo Look into potential "safe string" encoding issues in `stachio`.
+     */
+    let author     = pkg.author.replace(/ <.+>/i, '');
     let cname      = 'www.radioactivehamster.com';
     let htmltidyrc = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
 
     return gulp.src('src/template/*.hbs')
-        .pipe(stachio({ cname: cname, timestamp: dateTime() }))
+        .pipe(stachio({
+            author: author,
+            cname: cname,
+            timestamp: dateTime()
+        }))
         .pipe(htmltidy(htmltidyrc))
         .pipe(gulp.dest('./'));
 });
