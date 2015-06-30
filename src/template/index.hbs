@@ -12,8 +12,10 @@
                 var status  = val;
                 status.code = parseInt(key, radix);
 
-                html.push('<dt id="' + status.code + '"><a href="#' + status.code + '">' + status.code + '</a></dt>');
-                html.push('<dd class="reason-phrase">' + status['reason-phrase'] + '</dd>');
+                html.push('<section property="http:Response" id="' + status.code + '">');
+                html.push('<dt property="http:statusCodeValue"><a href="#' + status.code + '">' + status.code + '</a></dt>');
+                html.push('<dd property="http:reasonPhrase">' + status['reason-phrase'] + '</dd>');
+                html.push('</section>');
             });
         });
 
