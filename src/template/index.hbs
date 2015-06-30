@@ -1,25 +1,8 @@
-<script>
-    var radix = 10;
-
-    $.getJSON('data/http-status-codes.json', function (data) {
-        var html = ['<dl class="profile" id="status-codes">'];
-
-        $.each(data, function (key, val) {
-            var category  = val;
-            category.code = parseInt(key, radix);
-
-            $.each(category['status-codes'], function (key, val) {
-                var status  = val;
-                status.code = parseInt(key, radix);
-
-                html.push('<section property="http:Response" id="' + status.code + '">');
-                html.push('<dt property="http:statusCodeValue"><a href="#' + status.code + '">' + status.code + '</a></dt>');
-                html.push('<dd property="http:reasonPhrase">' + status['reason-phrase'] + '</dd>');
-                html.push('</section>');
-            });
-        });
-
-        html.push('</dl>');
-        $('#content').append(html.join('\n'));
-    });
-</script>
+<article>
+    <!-- TODO: Move the header text so it is structured as the top-most `dt` element of the document. -->
+    <dl class="profile" id="http-status-codes">
+        {{#each statusCodes}}
+            {{> status-code statusCode=statusCodeValue reasonPhrase=reasonPhrase }}
+        {{/each}}
+    </dl>
+</article>

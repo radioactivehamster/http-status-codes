@@ -42,14 +42,32 @@ gulp.task('template', () => {
      * Remove angle bracket enclosed email addresses.
      * @todo Look into potential "safe string" encoding issues in `stachio`.
      */
-    let author     = pkg.author.replace(/ <.+>/i, '');
-    let cname      = 'www.radioactivehamster.com';
-    let htmltidyrc = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
+    let author      = pkg.author.replace(/ <.+>/i, '');
+    let cname       = 'www.radioactivehamster.com';
+    let htmltidyrc  = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
+    let radix       = 10;
+    let statusData  = require('./data/http-status-codes.json');
+    let statusCodes = [];
+
+    Object.keys(statusData).forEach(classValue => {
+        let status        = statusData[classValue];
+        let classStatuses = status['status-codes'];
+
+        Object.keys(classStatuses).forEach(statusCodeValue => {
+            let statusCode = classStatuses[statusCodeValue];
+
+            statusCodes.push({
+                statusCodeValue: parseInt(statusCodeValue, radix),
+                reasonPhrase: statusCode['reason-phrase']
+            });
+        })
+    });
 
     return gulp.src('src/template/*.hbs')
         .pipe(stachio({
             author: author,
             cname: cname,
+            statusCodes: statusCodes,
             timestamp: dateTime()
         }))
         .pipe(htmltidy(htmltidyrc))

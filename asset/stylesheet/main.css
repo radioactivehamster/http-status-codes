@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
 header
 {
     padding: 1rem;
@@ -32,6 +33,15 @@ footer a:visited
 {
     color: #ddd;
 }
+footer #github-btn
+{
+    overflow: hidden;
+
+    width: 170px;
+    height: 20px;
+
+    border: none;
+}
 body
 {
     font-family: 'Open Sans', sans-serif;
@@ -41,32 +51,32 @@ body
 
     background-color: #01ff70;
 }
-dl#status-codes
+dl#http-status-codes
 {
     line-height: 6.8rem;
 
     padding: 1.5rem;
 }
-dl#status-codes dt
+dl#http-status-codes dt
 {
     font-size: 11rem;
     font-weight: 800;
 
     color: #111;
 }
-dl#status-codes dt a
+dl#http-status-codes dt a
 {
     text-decoration: none;
 
     color: #111;
 }
-dl#status-codes dt a:hover:before
+dl#http-status-codes dt a:hover:before
 {
     content: '#';
 
     color: #2ecc40;
 }
-dl#status-codes dd
+dl#http-status-codes dd
 {
     font-size: 6.8rem;
     font-weight: 600;
