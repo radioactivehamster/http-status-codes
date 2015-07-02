@@ -1,5 +1,51 @@
+/* FONT PATH
+ * -------------------------- */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@font-face
+{
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../font/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+}
+footer i.github
+{
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+
+    display: inline-block;
+
+    transform: translate(0, 0);
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+footer i.github
+{
+    font-size: 1.33333333em;
+    line-height: .75em;
+
+    vertical-align: -15%;
+}
+.fa-lifooter i.github
+{
+    left: -1.85714286em;
+}
+footer i.github.pull-left
+{
+    margin-right: .3em;
+}
+footer i.github.pull-right
+{
+    margin-left: .3em;
+}
+footer i.github:before
+{
+    content: '\f09b';
+}
 header
 {
     padding: 1rem;
@@ -51,32 +97,46 @@ body
 
     background-color: #01ff70;
 }
-dl#http-status-codes
+.profile
 {
     line-height: 6.8rem;
 
-    padding: 1.5rem;
+    margin-top: 0;
+    /** Profile Name */
+    /** Profile Properties */
 }
-dl#http-status-codes dt
+.profile > dt
+{
+    font-size: 8.5rem;
+    font-weight: 800;
+    line-height: 11.3rem;
+
+    margin-bottom: 3.5rem;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #fff;
+    background-color: #111;
+}
+.profile > dd dt
 {
     font-size: 11rem;
     font-weight: 800;
-
-    color: #111;
 }
-dl#http-status-codes dt a
+.profile > dd dt a
 {
     text-decoration: none;
 
     color: #111;
 }
-dl#http-status-codes dt a:hover:before
+.profile > dd dt a:hover:before
 {
     content: '#';
 
     color: #2ecc40;
 }
-dl#http-status-codes dd
+.profile > dd dd
 {
     font-size: 6.8rem;
     font-weight: 600;

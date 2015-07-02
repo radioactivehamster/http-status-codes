@@ -1,8 +1,8 @@
-<article>
-    <!-- TODO: Move the header text so it is structured as the top-most `dt` element of the document. -->
-    <dl class="profile" id="http-status-codes">
+<dl class="profile" id="http-status-codes">
+    <dt>HTTP Status Codes</dt>
+    <dd>
         {{#each statusCodes}}
             {{> status-code statusCode=statusCodeValue reasonPhrase=reasonPhrase }}
         {{/each}}
-    </dl>
-</article>
+    </dd>
+</dl>

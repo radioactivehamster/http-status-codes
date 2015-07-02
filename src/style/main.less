@@ -1,8 +1,12 @@
 @node-modules: '../../node_modules';
 
 @import (reference) '@{node-modules}/colors.css/less/colors';
+@import '@{node-modules}/font-awesome/less/variables';
+@fa-font-path: '../font';
+@import '@{node-modules}/font-awesome/less/path';
+@import (less, reference) '@{node-modules}/font-awesome/css/font-awesome.css';
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 @import '_header';
 @import '_footer';
 
@@ -13,34 +17,52 @@ body {
     padding: 0;
 }
 
-dl#http-status-codes {
+.profile {
     @font-size-definition: 6.8rem;
 
     line-height: @font-size-definition;
-    padding: 1.5rem;
+    margin-top: 0;
 
-    dt {
-        color: @black;
-        font-size: 11rem;
+    /** Profile Name */
+    & > dt {
+        background-color: @black;
+        color: @white;
+        font-size: @font-size-definition + 1.7rem;
         font-weight: 800;
+        line-height: @font-size-definition + 4.5rem;
+        margin-bottom: 3.5rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
-        a {
-            color: @black;
-            text-decoration: none;
+    /** Profile Properties */
+    & > dd {
+        dt {
+            font-size: 11rem;
+            font-weight: 800;
 
-            &:hover {
-                &:before {
-                    color: @green;
-                    content: '#';
+            a {
+                color: @black;
+                text-decoration: none;
+
+                &:hover {
+                    &:before {
+                        color: @green;
+                        content: '#';
+                    }
                 }
             }
         }
-    }
 
-    dd {
-        color: @white;
-        font-size: @font-size-definition;
-        font-weight: 600;
-        margin-bottom: 2.5rem;
+        dd {
+            color: @white;
+            font-size: @font-size-definition;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+        }
     }
+}
+
+footer i.github:extend(.fa all, .fa-lg all, .fa-github all) {
+    // ...
 }

@@ -24,13 +24,18 @@ gulp.task('data', () => {
     });
 });
 
+gulp.task('font', () => {
+    return gulp.src('node_modules/font-awesome/fonts/**.*')
+        .pipe(gulp.dest('asset/font'));
+});
+
 gulp.task('serve', ['data', 'style', 'template'], () => {
     browserSync.init({ open: false, server: { baseDir: './' } });
     gulp.watch('src/style/*.less', ['style']).on('change', browserSync.reload);
     gulp.watch('src/template/*.hbs', ['template']).on('change', browserSync.reload);
 });
 
-gulp.task('style', () => {
+gulp.task('style', ['font'], () => {
     return gulp.src('src/style/main.less')
         .pipe(less())
         .pipe(csscomb())
@@ -75,4 +80,4 @@ gulp.task('template', () => {
         .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['data', 'style', 'template']);
+gulp.task('default', ['data', 'font', 'style', 'template']);
