@@ -1,4 +1,4 @@
+drop-empty-elements: no
 indent: no
-new-inline-tags: data
 show-warnings: yes
 wrap: 120

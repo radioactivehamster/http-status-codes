@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 header
 {
     padding: 1rem;
@@ -16,7 +17,6 @@ header h1
 }
 footer
 {
-    font-size: .8rem;
     line-height: 1.5;
 
     padding: 1.5rem;
