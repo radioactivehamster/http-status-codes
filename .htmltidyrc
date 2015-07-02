@@ -1,4 +1,4 @@
-indent: auto
+indent: no
 new-inline-tags: data
 show-warnings: yes
 wrap: 120
