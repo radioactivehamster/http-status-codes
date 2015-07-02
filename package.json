@@ -20,6 +20,7 @@
     "browser-sync": "^2.7.12",
     "colors.css": "^2.3.0",
     "gulp": "^3.9.0",
+    "gulp-colorguard": "^1.1.0",
     "gulp-csscomb": "^3.0.4",
     "gulp-htmltidy": "^0.2.2",
     "gulp-less": "^3.0.3",

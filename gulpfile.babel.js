@@ -1,11 +1,11 @@
 'use strict';
 
 var browserSync = require('browser-sync').create();
+var colorguard  = require('gulp-colorguard');
 var csscomb     = require('gulp-csscomb');
 var dateTime    = require('@radioactivehamster/date-time');
 var fs          = require('fs');
 var gulp        = require('gulp');
-var handlebars  = require('handlebars');
 var htmltidy    = require('gulp-htmltidy');
 var less        = require('gulp-less');
 var pkg         = require('./package.json');
@@ -34,6 +34,7 @@ gulp.task('style', () => {
     return gulp.src('src/style/main.less')
         .pipe(less())
         .pipe(csscomb())
+        .pipe(colorguard().on('error', e => console.warn(e.message)))
         .pipe(gulp.dest('asset/stylesheet'));
 });
 
@@ -60,7 +61,7 @@ gulp.task('template', () => {
                 statusCodeValue: parseInt(statusCodeValue, radix),
                 reasonPhrase: statusCode['reason-phrase']
             });
-        })
+        });
     });
 
     return gulp.src('src/template/*.hbs')
