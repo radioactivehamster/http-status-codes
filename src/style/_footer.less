@@ -5,13 +5,14 @@ footer {
     padding: 1.5rem;
 
     a {
-        &:hover {
-            color: @lime;
-        }
-
         &:link,
         &:visited {
             color: @silver;
+            text-decoration: underline dashed @lime;
+        }
+
+        &:hover {
+            color: @lime;
         }
     }
 

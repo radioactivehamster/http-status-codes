@@ -1,12 +1,15 @@
 @node-modules: '../../node_modules';
 
 @import (reference) '@{node-modules}/colors.css/less/colors';
+
+// Font-Awesome dark magic...
 @import '@{node-modules}/font-awesome/less/variables';
 @fa-font-path: '../font';
 @import '@{node-modules}/font-awesome/less/path';
 @import (less, reference) '@{node-modules}/font-awesome/css/font-awesome.css';
+
+// And now back to our regulary scheduled program...
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
-// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 @import '_header';
 @import '_footer';
 
@@ -63,6 +66,4 @@ body {
     }
 }
 
-footer i.github:extend(.fa all, .fa-lg all, .fa-github all) {
-    // ...
-}
+footer i.github:extend(.fa all, .fa-lg all, .fa-code-fork all) {}

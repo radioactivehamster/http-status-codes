@@ -44,7 +44,7 @@ footer i.github.pull-right
 }
 footer i.github:before
 {
-    content: '\f09b';
+    content: '\f126';
 }
 header
 {
@@ -70,14 +70,16 @@ footer
     color: #ddd;
     background-color: #111;
 }
-footer a:hover
-{
-    color: #01ff70;
-}
 footer a:link,
 footer a:visited
 {
+    text-decoration: underline dashed #01ff70;
+
     color: #ddd;
+}
+footer a:hover
+{
+    color: #01ff70;
 }
 footer #github-btn
 {
