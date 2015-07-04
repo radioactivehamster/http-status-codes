@@ -1,5 +1,4 @@
 @node-modules: '../../node_modules';
-
 @import (reference) '@{node-modules}/colors.css/less/colors';
 
 // Font-Awesome dark magic...
@@ -26,7 +25,7 @@ body {
     line-height: @font-size-definition;
     margin-top: 0;
 
-    /** Profile Name */
+    /** Title */
     & > dt {
         background-color: @black;
         color: @white;
@@ -38,7 +37,7 @@ body {
         text-transform: uppercase;
     }
 
-    /** Profile Properties */
+    /** Properties */
     & > dd {
         dt {
             font-size: 11rem;
@@ -66,4 +65,6 @@ body {
     }
 }
 
-footer i.github:extend(.fa all, .fa-lg all, .fa-code-fork all) {}
+[property='http:statusCodeValue'] dfn {
+    font-style: normal;
+}

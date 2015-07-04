@@ -1,4 +1,14 @@
-<dl property="http:Response" id="{{statusCode}}">
-    <dt property="http:statusCodeValue"><a href="#{{statusCode}}">{{statusCode}}</a></dt>
+<dl property="http:Response">
+    {{!--
+        > The dt element itself, when used in a dl element, does not indicate
+        > that its contents are a term being defined, but this can be indicated
+        > using the dfn element.
+        @link <http://www.w3.org/TR/html51/semantics.html#the-dt-element>
+    --}}
+    <dt property="http:statusCodeValue" id="{{statusCode}}">
+        <a href="#{{statusCode}}">
+            <dfn>{{statusCode}}</dfn>
+        </a>
+    </dt>
     <dd property="http:reasonPhrase">{{reasonPhrase}}</dd>
 </dl>

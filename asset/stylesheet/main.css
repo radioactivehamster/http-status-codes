@@ -3,12 +3,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
 @font-face
 {
-    font-family: 'FontAwesome';
+    font-family: "FontAwesome";
     font-weight: normal;
     font-style: normal;
 
-    src: url('../font/fontawesome-webfont.eot?v=4.3.0');
-    src: url('../font/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    src: url("../font/fontawesome-webfont.eot?v=4.3.0");
+    src: url("../font/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../font/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../font/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../font/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
 }
 footer i.github
 {
@@ -44,7 +44,7 @@ footer i.github.pull-right
 }
 footer i.github:before
 {
-    content: '\f126';
+    content: "\f09b";
 }
 header
 {
@@ -81,18 +81,9 @@ footer a:hover
 {
     color: #01ff70;
 }
-footer #github-btn
-{
-    overflow: hidden;
-
-    width: 170px;
-    height: 20px;
-
-    border: none;
-}
 body
 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
 
     margin: 0;
     padding: 0;
@@ -104,8 +95,8 @@ body
     line-height: 6.8rem;
 
     margin-top: 0;
-    /** Profile Name */
-    /** Profile Properties */
+    /** Title */
+    /** Properties */
 }
 .profile > dt
 {
@@ -134,7 +125,7 @@ body
 }
 .profile > dd dt a:hover:before
 {
-    content: '#';
+    content: "#";
 
     color: #2ecc40;
 }
@@ -146,4 +137,8 @@ body
     margin-bottom: 2.5rem;
 
     color: #fff;
+}
+[property="http:statusCodeValue"] dfn
+{
+    font-style: normal;
 }
