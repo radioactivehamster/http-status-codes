@@ -4,6 +4,7 @@
   "description": "JSON & YAML representations of the HTTP status codes.",
   "main": "http-status-codes.yml",
   "scripts": {
+    "json": "js-yaml http-status-codes.yml | json -4 > http-status-codes.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,5 +14,9 @@
     "YAML"
   ],
   "author": "James Benner <james.benner@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "js-yaml": "^3.10.0",
+    "json": "^9.0.6"
+  }
 }
