@@ -1,5 +1,9 @@
 <dl class="profile" id="http-status-codes">
-    <dt>HTTP Status Codes</dt>
+    <dt class="http-status-codes__title">
+        <span class="http-status-codes__title--word">HTTP</span>
+        <span class="http-status-codes__title--word">Status</span>
+        <span class="http-status-codes__title--word">Codes</span>
+    </dt>
     <dd>
         {{#each statusCodes}}
             {{> status-code statusCode=statusCodeValue reasonPhrase=reasonPhrase }}

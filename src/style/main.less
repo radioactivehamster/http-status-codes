@@ -19,23 +19,29 @@ body {
     padding: 0;
 }
 
+.http-status-codes__title {
+    @font-size-definition: 6.8rem;
+    @spacing: 3.5rem;
+
+    background-color: @black;
+    color: @white;
+    font-size: @font-size-definition + 1.7rem;
+    font-weight: 900;
+    margin-bottom: @spacing;
+    padding: @spacing;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.http-status-codes__title--word {
+    display: block;
+}
+
 .profile {
     @font-size-definition: 6.8rem;
 
     line-height: @font-size-definition;
     margin-top: 0;
-
-    /** Title */
-    & > dt {
-        background-color: @black;
-        color: @white;
-        font-size: @font-size-definition + 1.7rem;
-        font-weight: 800;
-        line-height: @font-size-definition + 4.5rem;
-        margin-bottom: 3.5rem;
-        text-align: center;
-        text-transform: uppercase;
-    }
 
     /** Properties */
     & > dd {

@@ -3,7 +3,7 @@
 1xx:
   class: Informational
   synopsis: Request received, continuing process
-  description: >
+  description: >-
     This class of status code indicates a provisional response,
     consisting only of the Status-Line and optional headers, and is
     terminated by an empty line. There are no required headers for this
@@ -25,7 +25,7 @@
   status-codes:
     100:
       reason-phrase: Continue
-      description: >
+      description: >-
         The client SHOULD continue with its request. This interim response is
         used to inform the client that the initial part of the request has
         been received and has not yet been rejected by the server. The client
@@ -36,7 +36,7 @@
         status code.
     101:
       reason-phrase: Switching Protocols
-      description: >
+      description: >-
         The server understands and is willing to comply with the client's
         request, via the Upgrade message header field (section 14.42), for a
         change in the application protocol being used on this connection. The
@@ -52,13 +52,13 @@
 2xx:
   class: Success
   synopsis: The action was successfully received, understood, and accepted
-  description: >
+  description: >-
     This class of status code indicates that the client's request was
     successfully received, understood, and accepted.
   status-codes:
     200:
       reason-phrase: OK
-      description: >
+      description: >-
         The request has succeeded. The information returned with the response
         is dependent on the method used in the request, for example:
 
@@ -74,7 +74,7 @@
                end server.
     201:
       reason-phrase: Created
-      description: >
+      description: >-
         The request has been fulfilled and resulted in a new resource being
         created. The newly created resource can be referenced by the URI(s)
         returned in the entity of the response, with the most specific URI
@@ -92,7 +92,7 @@
         created, see section 14.19.
     202:
       reason-phrase: Accepted
-      description: >
+      description: >-
         The request has been accepted for processing, but the processing has
         not been completed.  The request might or might not eventually be
         acted upon, as it might be disallowed when processing actually takes
@@ -109,7 +109,7 @@
         user can expect the request to be fulfilled.
     203:
       reason-phrase: Non-Authoritative Information
-      description: >
+      description: >-
         The returned metainformation in the entity-header is not the
         definitive set as available from the origin server, but is gathered
         from a local or a third-party copy. The set presented MAY be a subset
@@ -120,7 +120,7 @@
         response would otherwise be 200 (OK).
     204:
       reason-phrase: No Content
-      description: >
+      description: >-
         The server has fulfilled the request but does not need to return an
         entity-body, and might want to return updated metainformation. The
         response MAY include new or updated metainformation in the form of
@@ -138,7 +138,7 @@
         terminated by the first empty line after the header fields.
     205:
       reason-phrase: Reset Content
-      description: >
+      description: >-
         The server has fulfilled the request and the user agent SHOULD reset
         the document view which caused the request to be sent. This response
         is primarily intended to allow input for actions to take place via
@@ -147,7 +147,7 @@
         response MUST NOT include an entity.
     206:
       reason-phrase: Partial Content
-      description: >
+      description: >-
         The server has fulfilled the partial GET request for the resource.
         The request MUST have included a Range header field (section 14.35)
         indicating the desired range, and MAY have included an If-Range
@@ -189,7 +189,7 @@
 3xx:
   class: Redirection
   synopsis: Further action must be taken in order to complete the request
-  description: >
+  description: >-
     This class of status code indicates that further action needs to be
     taken by the user agent in order to fulfill the request.  The action
     required MAY be carried out by the user agent without interaction
@@ -204,7 +204,7 @@
   status-codes:
     300:
       reason-phrase: Multiple Choices
-      description: >
+      description: >-
         The requested resource corresponds to any one of a set of
         representations, each with its own specific location, and agent-
         driven negotiation information (section 12) is being provided so that
@@ -226,7 +226,7 @@
         redirection. This response is cacheable unless indicated otherwise.
     301:
       reason-phrase: Moved Permanently
-      description: >
+      description: >-
         The requested resource has been assigned a new permanent URI and any
         future references to this resource SHOULD use one of the returned
         URIs.  Clients with link editing capabilities ought to automatically
@@ -249,7 +249,7 @@
            will erroneously change it into a GET request.
     302:
       reason-phrase: Found
-      description: >
+      description: >-
         The requested resource resides temporarily under a different URI.
         Since the redirection might be altered on occasion, the client SHOULD
         continue to use the Request-URI for future requests.  This response
@@ -275,7 +275,7 @@
            kind of reaction is expected of the client.
     303:
       reason-phrase: See Other
-      description: >
+      description: >-
         The response to the request can be found under a different URI and
         SHOULD be retrieved using a GET method on that resource. This method
         exists primarily to allow the output of a POST-activated script to
@@ -295,7 +295,7 @@
            to a 302 response as described here for 303.
     304:
       reason-phrase: Not Modified
-      description: >
+      description: >-
         If the client has performed a conditional GET request and access is
         allowed, but the document has not been modified, the server SHOULD
         respond with this status code. The 304 response MUST NOT contain a
@@ -333,7 +333,7 @@
         the response.
     305:
       reason-phrase: Use Proxy
-      description: >
+      description: >-
         The requested resource MUST be accessed through the proxy given by
         the Location field. The Location field gives the URI of the proxy.
         The recipient is expected to repeat this single request via the
@@ -344,12 +344,12 @@
            observing these limitations has significant security consequences.
     306:
       reason-phrase: (Unused)
-      description: >
+      description: >-
         The 306 status code was used in a previous version of the
         specification, is no longer used, and the code is reserved.
     307:
       reason-phrase: Temporary Redirect
-      description: >
+      description: >-
         The requested resource resides temporarily under a different URI.
         Since the redirection MAY be altered on occasion, the client SHOULD
         continue to use the Request-URI for future requests.  This response
@@ -371,7 +371,7 @@
 4xx:
   class: Client Error
   synopsis: The request contains bad syntax or cannot be fulfilled
-  description: >
+  description: >-
     The 4xx class of status code is intended for cases in which the
     client seems to have erred. Except when responding to a HEAD request,
     the server SHOULD include an entity containing an explanation of the
@@ -389,13 +389,13 @@
   status-codes:
     400:
       reason-phrase: Bad Request
-      description: >
+      description: >-
         The request could not be understood by the server due to malformed
         syntax. The client SHOULD NOT repeat the request without
         modifications.
     401:
       reason-phrase: Unauthorized
-      description: >
+      description: >-
         The request requires user authentication. The response MUST include a
         WWW-Authenticate header field (section 14.47) containing a challenge
         applicable to the requested resource. The client MAY repeat the
@@ -411,11 +411,11 @@
         Authentication."
     402:
       reason-phrase: Payment Required
-      description: >
+      description: >-
         This code is reserved for future use.
     403:
       reason-phrase: Forbidden
-      description: >
+      description: >-
         The server understood the request, but is refusing to fulfill it.
         Authorization will not help and the request SHOULD NOT be repeated.
         If the request method was not HEAD and the server wishes to make
@@ -425,7 +425,7 @@
         (Not Found) can be used instead.
     404:
       reason-phrase: Not Found
-      description: >
+      description: >-
         The server has not found anything matching the Request-URI. No
         indication is given of whether the condition is temporary or
         permanent. The 410 (Gone) status code SHOULD be used if the server
@@ -436,14 +436,14 @@
         response is applicable.
     405:
       reason-phrase: Method Not Allowed
-      description: >
+      description: >-
         The method specified in the Request-Line is not allowed for the
         resource identified by the Request-URI. The response MUST include an
         Allow header containing a list of valid methods for the requested
         resource.
     406:
       reason-phrase: Not Acceptable
-      description: >
+      description: >-
         The resource identified by the request is only capable of generating
         response entities which have content characteristics not acceptable
         according to the accept headers sent in the request.
@@ -468,7 +468,7 @@
         decision on further actions.
     407:
       reason-phrase: Proxy Authentication Required
-      description: >
+      description: >-
         This code is similar to 401 (Unauthorized), but indicates that the
         client must first authenticate itself with the proxy. The proxy MUST
         return a Proxy-Authenticate header field (section 14.33) containing a
@@ -478,13 +478,13 @@
         in "HTTP Authentication: Basic and Digest Access Authentication."
     408:
       reason-phrase: Request Timeout
-      description: >
+      description: >-
         The client did not produce a request within the time that the server
         was prepared to wait. The client MAY repeat the request without
         modifications at any later time.
     409:
       reason-phrase: Conflict
-      description: >
+      description: >-
         The request could not be completed due to a conflict with the current
         state of the resource. This code is only allowed in situations where
         it is expected that the user might be able to resolve the conflict
@@ -504,7 +504,7 @@
         Content-Type.
     410:
       reason-phrase: Gone
-      description: >
+      description: >-
         The requested resource is no longer available at the server and no
         forwarding address is known. This condition is expected to be
         considered permanent. Clients with link editing capabilities SHOULD
@@ -524,14 +524,14 @@
         discretion of the server owner.
     411:
       reason-phrase: Length Required
-      description: >
+      description: >-
         The server refuses to accept the request without a defined Content-
         Length. The client MAY repeat the request if it adds a valid
         Content-Length header field containing the length of the message-body
         in the request message.
     412:
       reason-phrase: Precondition Failed
-      description: >
+      description: >-
         The precondition given in one or more of the request-header fields
         evaluated to false when it was tested on the server. This response
         code allows the client to place preconditions on the current resource
@@ -539,7 +539,7 @@
         method from being applied to a resource other than the one intended.
     413:
       reason-phrase: Request Entity Too Large
-      description: >
+      description: >-
         The server is refusing to process a request because the request
         entity is larger than the server is willing or able to process. The
         server MAY close the connection to prevent the client from continuing
@@ -550,7 +550,7 @@
         time the client MAY try again.
     414:
       reason-phrase: Request-URI Too Long
-      description: >
+      description: >-
         The server is refusing to service the request because the Request-URI
         is longer than the server is willing to interpret. This rare
         condition is only likely to occur when a client has improperly
@@ -562,13 +562,13 @@
         buffers for reading or manipulating the Request-URI.
     415:
       reason-phrase: Unsupported Media Type
-      description: >
+      description: >-
         The server is refusing to service the request because the entity of
         the request is in a format not supported by the requested resource
         for the requested method.
     416:
       reason-phrase: Requested Range Not Satisfiable
-      description: >
+      description: >-
         A server SHOULD return a response with this status code if a request
         included a Range request-header field (section 14.35), and none of
         the range-specifier values in this field overlap the current extent
@@ -584,7 +584,7 @@
         type.
     417:
       reason-phrase: Expectation Failed
-      description: >
+      description: >-
         The expectation given in an Expect request-header field (see section
         14.20) could not be met by this server, or, if the server is a proxy,
         the server has unambiguous evidence that the request could not be met
@@ -592,7 +592,7 @@
 5xx:
   class: Server Error
   synopsis: The server failed to fulfill an apparently valid request
-  description: >
+  description: >-
     Response status codes beginning with the digit "5" indicate cases in
     which the server is aware that it has erred or is incapable of
     performing the request. Except when responding to a HEAD request, the
@@ -603,25 +603,25 @@
   status-codes:
     500:
       reason-phrase: Internal Server Error
-      description: >
+      description: >-
         The server encountered an unexpected condition which prevented it
         from fulfilling the request.
     501:
       reason-phrase: Not Implemented
-      description: >
+      description: >-
         The server does not support the functionality required to fulfill the
         request. This is the appropriate response when the server does not
         recognize the request method and is not capable of supporting it for
         any resource.
     502:
       reason-phrase: Bad Gateway
-      description: >
+      description: >-
         The server, while acting as a gateway or proxy, received an invalid
         response from the upstream server it accessed in attempting to
         fulfill the request.
     503:
       reason-phrase: Service Unavailable
-      description: >
+      description: >-
         The server is currently unable to handle the request due to a
         temporary overloading or maintenance of the server. The implication
         is that this is a temporary condition which will be alleviated after
@@ -634,7 +634,7 @@
            to simply refuse the connection.
     504:
       reason-phrase: Gateway Time-out
-      description: >
+      description: >-
         The server, while acting as a gateway or proxy, did not receive a
         timely response from the upstream server specified by the URI (e.g.
         HTTP, FTP, LDAP) or some other auxiliary server (e.g. DNS) it needed
@@ -644,7 +644,7 @@
            return 400 or 500 when DNS lookups time out.
     505:
       reason-phrase: HTTP Version Not Supported
-      description: >
+      description: >-
         The server does not support, or refuses to support, the HTTP protocol
         version that was used in the request message. The server is
         indicating that it is unable or unwilling to complete the request
