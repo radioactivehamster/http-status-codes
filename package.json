@@ -15,6 +15,9 @@
   ],
   "author": "James Benner <james.benner@gmail.com>",
   "license": "MIT",
+  "config": {
+    "analyticsId": "UA-23925597-1"
+  },
   "devDependencies": {
     "@radioactivehamster/date-time": "^0.1.2",
     "babel": "^5.6.14",

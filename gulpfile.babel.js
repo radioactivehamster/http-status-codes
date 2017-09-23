@@ -49,6 +49,7 @@ gulp.task('template', () => {
      * @todo Look into potential "safe string" encoding issues in `stachio`.
      */
     let author      = pkg.author.replace(/ <.+>/i, '');
+    let analyticsId = pkg.config.analyticsId;
     let cname       = 'www.radioactivehamster.com';
     let htmltidyrc  = yaml.load(fs.readFileSync('./.htmltidyrc').toString());
     let radix       = 10;
@@ -72,6 +73,7 @@ gulp.task('template', () => {
     return gulp.src('src/template/*.hbs')
         .pipe(stachio({
             author: author,
+            analyticsId,
             cname: cname,
             statusCodes: statusCodes,
             timestamp: dateTime()
